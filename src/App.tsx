@@ -2,14 +2,21 @@ import Message from "./Components/Message";
 import Button from "./Components/Button";
 import ListGroup from "./Components/ListGroup";
 
-function App(){
-  return(
+function App() {
+  let cities = ["Delhi", "Mumbai", "Jaipur", "kanpur", "Goa"];
+  let countries = ["India", "Nepal", "China", "Russia", "America"];
+
+  const handleSelectItem = (item: string)=>{
+    console.log("App",item);
+  }
+  return (
     <div>
-      <Message/>
-      <ListGroup/>
-      <Button/>
+      <Message />
+      <ListGroup items={cities} onSelectItem ={handleSelectItem} />
+      <Button />
+      <ListGroup items={countries} onSelectItem ={handleSelectItem}/>
     </div>
-  )
+  );
 }
 
 export default App;

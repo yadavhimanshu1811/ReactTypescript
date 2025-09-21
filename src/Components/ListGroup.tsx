@@ -1,7 +1,14 @@
 import { MouseEvent, useState } from "react";
 
-function ListGroup() {
-  let items = ["Delhi", "Mumbai", "Jaipur", "kanpur", "Goa"];
+interface Props {
+  items: string[];
+  onSelectItem: (item: string) => void;
+}
+
+function ListGroup(props: Props) {
+  let items = props.items.length
+    ? props.items
+    : ["Delhi", "Mumbai", "Jaipur", "kanpur", "Goa"];
   //   items = [];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -21,13 +28,13 @@ function ListGroup() {
               console.log(event);
             }}
           >
-            Cras justo odio
+            item 1
           </li>
           <li
             className="list-group-item"
             onClick={handleClick} //dont call the function
           >
-            Dapibus ac facilisis in
+            item 2
           </li>
           {items.map((it, index) => (
             <li
@@ -38,6 +45,7 @@ function ListGroup() {
               onClick={(event) => {
                 console.log(it, index, event);
                 setSelectedIndex(index);
+                props.onSelectItem(it);
               }}
             >
               {it}
