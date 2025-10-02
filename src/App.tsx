@@ -11,9 +11,10 @@ function App() {
   }
   return (
     <div>
-      <Message />
+      <Message Heading= "Himanshu Yadav" />
       <ListGroup items={cities} onSelectItem ={handleSelectItem} />
-      <Button />
+      <Button text={"Ok Done"} />
+      <Button text={"Enter"} />
       <ListGroup items={countries} onSelectItem ={handleSelectItem}/>
     </div>
   );
