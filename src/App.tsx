@@ -1,6 +1,7 @@
 import Message from "./Components/Message";
 import Button from "./Components/Button";
 import ListGroup from "./Components/ListGroup";
+import TodoList from "./Projects/TodoList";
 
 function App() {
   let cities = ["Delhi", "Mumbai", "Jaipur", "kanpur", "Goa"];
@@ -11,11 +12,12 @@ function App() {
   }
   return (
     <div>
-      <Message Heading= "Himanshu Yadav" />
+      <TodoList/>
+      {/* <Message Heading= "Himanshu Yadav" />
       <ListGroup items={cities} onSelectItem ={handleSelectItem} />
       <Button text={"Ok Done"} />
-      <Button text={"Enter"} />
-      <ListGroup items={countries} onSelectItem ={handleSelectItem}/>
+      <Button text={"Enter"} /> */}
+      {/* <ListGroup items={countries} onSelectItem ={handleSelectItem}/> */}
     </div>
   );
 }
