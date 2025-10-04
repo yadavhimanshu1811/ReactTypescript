@@ -14,6 +14,11 @@ function TodoList() {
     }
   };
 
+  const deleteFromList = (index: number) => {
+    list.splice(index, 1);
+    setList([...list]);
+  };
+
   return (
     <div
       className="d-flex justify-content-center align-items-center bg-dark"
@@ -31,8 +36,15 @@ function TodoList() {
           <Button text="Add" onButtonClick={addToList} />
         </div>
         <ul className="list-group">
-          {list.map((it) => (
-            <li className="list-group-item">{it}</li>
+          {list.map((it, index) => (
+            <li className="list-group-item">
+              {it}
+              <Button text="Done" onButtonClick={addToList} />
+              <Button
+                text="Delete"
+                onButtonClick={() => deleteFromList(index)}
+              />
+            </li>
           ))}
         </ul>
       </div>
