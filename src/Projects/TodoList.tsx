@@ -34,20 +34,25 @@ function TodoList() {
       className="d-flex justify-content-center align-items-center bg-dark"
       style={{ height: "100vh" }}
     >
-      <div className="p-5 bg-light border rounded" style={{ height: "500px" }}>
+      <div className="p-5 bg-light border rounded" style={{ height: "500px", width:"600px" }}>
         <h1>TODO List</h1>
-        <div>
+        <div className="input-group mb-3">
           <input
+            type="text"
+            className="form-control"
+            placeholder="Enter a new task..."
             value={inputValue}
-            onChange={(e) => {
-              setInputValue(e.target.value);
-            }}
+            onChange={(e) => setInputValue(e.target.value)}
           />
-          <Button text="Add" onButtonClick={addToList} />
+          <Button
+            className="btn btn-primary"
+            text="Add"
+            onButtonClick={addToList}
+          />
         </div>
         <ul className="list-group">
           {list.map((it, index) => (
-            <li className="list-group-item">
+            <li className="list-group-item d-flex justify-content-between align-items-center">
               <span
                 className={
                   taskDoneIndexes.includes(index)
@@ -57,14 +62,20 @@ function TodoList() {
               >
                 {it}
               </span>
-              <Button
-                text={taskDoneIndexes.includes(index) ? "Reopen" : "Done"}
-                onButtonClick={() => taskDone(index)}
-              />
-              <Button
-                text="Delete"
-                onButtonClick={() => deleteFromList(index)}
-              />
+              <div className="d-flex gap-2">
+                <Button
+                  text={taskDoneIndexes.includes(index) ? "Reopen" : "Done"}
+                  className={`btn btn-sm ${
+                    taskDoneIndexes.includes(index) ? "" : "btn-success"
+                  }`}
+                  onButtonClick={() => taskDone(index)}
+                />
+                <Button
+                  text="Delete"
+                  className="btn btn-outline-danger btn-sm"
+                  onButtonClick={() => deleteFromList(index)}
+                />
+              </div>
             </li>
           ))}
         </ul>
