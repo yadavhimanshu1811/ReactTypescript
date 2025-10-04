@@ -19,7 +19,7 @@ function ListGroup(props: Props) {
   const handleClick = (event: MouseEvent) => console.log(event);
 
   return (
-    <>
+    <div style={{width:"30%"}} className="p-1">
       {items.length ? (
         <ul className="list-group">
           <li
@@ -56,7 +56,7 @@ function ListGroup(props: Props) {
         <div>No items found</div>
       )}
       {getErrorMessage()}
-    </>
+    </div>
   );
 }
 

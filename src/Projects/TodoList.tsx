@@ -32,9 +32,9 @@ function TodoList() {
   return (
     <div
       className="d-flex justify-content-center align-items-center bg-dark"
-      style={{ height: "100vh" }}
+      style={{ height: "100vh", width:"30%" }}
     >
-      <div className="p-5 bg-light border rounded" style={{ height: "500px", width:"600px" }}>
+      <div className="p-1 bg-light border rounded" style={{ height: "500px", width:"90%" }}>
         <h1>TODO List</h1>
         <div className="input-group mb-3">
           <input
