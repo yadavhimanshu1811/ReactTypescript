@@ -31,10 +31,13 @@ function TodoList() {
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center bg-dark"
-      style={{ height: "100vh", width:"30%" }}
+      className="d-flex justify-content-center align-items-center bg-dark m-1"
+      style={{ height: "100vh", width: "30%" }}
     >
-      <div className="p-1 bg-light border rounded" style={{ height: "500px", width:"90%" }}>
+      <div
+        className="p-1 bg-light border rounded"
+        style={{ height: "90%", width: "90%" }}
+      >
         <h1>TODO List</h1>
         <div className="input-group mb-3">
           <input
@@ -50,7 +53,7 @@ function TodoList() {
             onButtonClick={addToList}
           />
         </div>
-        <ul className="list-group">
+        <ol className="list-group overflow-scroll" style={{ height: "75%" }}>
           {list.map((it, index) => (
             <li className="list-group-item d-flex justify-content-between align-items-center">
               <span
@@ -78,7 +81,7 @@ function TodoList() {
               </div>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </div>
   );
