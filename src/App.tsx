@@ -2,6 +2,7 @@ import ListGroup from "./Components/ListGroup";
 import TodoList from "./Projects/TodoList";
 import InstagramDetails from "./Projects/InstagramDetails/InstagramDetails";
 import RunningDetails from "./Projects/RunningDetails/RunningDetails";
+import Alert from "./Components/Alert";
 
 function App() {
   let cities = ["Delhi", "Mumbai", "Jaipur", "kanpur", "Goa"];
@@ -15,7 +16,10 @@ function App() {
       <TodoList/>
       {/* <ListGroup items={countries} onSelectItem ={handleSelectItem}/> */}
       <InstagramDetails/>
-      <RunningDetails/>
+      {/* <RunningDetails/> */}
+      <Alert>
+        hello <span>world</span>
+      </Alert>
     </div>
   );
 }

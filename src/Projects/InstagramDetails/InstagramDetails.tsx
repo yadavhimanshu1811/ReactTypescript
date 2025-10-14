@@ -215,16 +215,18 @@ function InstagramDetails() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
+  const [dataCompleteBoolean, SetDataCompleteBoolean] = useState(false);
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const res = await fetch("https://jsonplaceholder.typicode.com/users");
         const data: User[] = await res.json();
-        setUsers([...data, ...data]);
+        setUsers([...data, ...data, ...data]);
         console.log("data received", data);
-        if (data.length != 30) {
-        //   await fetchUsers();
+        if(!dataCompleteBoolean){
+          // await fetchUsers();
+          SetDataCompleteBoolean(true);
         }
       } catch (err: any) {
         setError(err.message);
@@ -234,6 +236,10 @@ function InstagramDetails() {
     };
     fetchUsers();
   }, []);
+
+  const fetchFollowers = () =>{
+
+  }
 
   return (
     <div
