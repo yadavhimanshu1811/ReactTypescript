@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Button from "../Components/Button";
+import Alert from "../Components/Alert";
 
 function TodoList() {
   const [list, setList] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [taskDoneIndexes, setTaskDoneIndexes] = useState<number[]>([]);
+  const showAlert = true;
 
   const addToList = () => {
     if (inputValue.length == 0) {
@@ -38,6 +40,9 @@ function TodoList() {
         className="p-1 bg-light border rounded"
         style={{ height: "90%", width: "90%" }}
       >
+        {showAlert ? <Alert>
+          hello <span>world</span>
+        </Alert>: null}
         <h1>TODO List</h1>
         <div className="input-group mb-3">
           <input

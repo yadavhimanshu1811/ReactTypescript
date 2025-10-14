@@ -5,7 +5,7 @@ interface Props {
 }
 const Alert = ({children}: Props) => {
   return (
-    <div className="alert alert-primary" style={{width:"30%"}}>{children}</div>
+    <div className="alert alert-primary" style={{width:"100%"}}>{children}</div>
   )
 }
 
