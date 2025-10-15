@@ -6,11 +6,11 @@ function TodoList() {
   const [list, setList] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [taskDoneIndexes, setTaskDoneIndexes] = useState<number[]>([]);
-  const showAlert = true;
+  const [showAlert, setShowAlert] = useState(true);
 
   const addToList = () => {
     if (inputValue.length == 0) {
-      alert("Please write something before adding to the list");
+      setShowAlert(true);
     } else {
       setList([...list, inputValue]);
       setInputValue("");
@@ -40,8 +40,10 @@ function TodoList() {
         className="p-1 bg-light border rounded"
         style={{ height: "90%", width: "90%" }}
       >
-        {showAlert ? <Alert>
-          hello <span>world</span>
+        {showAlert ? <Alert closeAlert={()=>{
+          setShowAlert(false);
+        }}>
+          Hello <span>{"Himanshu"}</span>, Please write something before adding to the list !
         </Alert>: null}
         <h1>TODO List</h1>
         <div className="input-group mb-3">

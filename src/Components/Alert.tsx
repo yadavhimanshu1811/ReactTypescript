@@ -1,12 +1,16 @@
 import { ReactNode } from "react";
 
 interface Props {
-    children: ReactNode;
+  children: ReactNode;
+  closeAlert: ()=>void;
 }
-const Alert = ({children}: Props) => {
+const Alert = ({ children, closeAlert }: Props) => {
   return (
-    <div className="alert alert-primary" style={{width:"100%"}}>{children}</div>
-  )
-}
+    <div className="alert alert-primary d-flex justify-content-between" style={{ width: "100%" }}>
+      <span>{children}</span>
+      <button type="button" className="btn-close" onClick={closeAlert}></button>
+    </div>
+  );
+};
 
-export default Alert
+export default Alert;
