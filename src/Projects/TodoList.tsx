@@ -6,7 +6,7 @@ function TodoList() {
   const [list, setList] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [taskDoneIndexes, setTaskDoneIndexes] = useState<number[]>([]);
-  const [showAlert, setShowAlert] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
 
   const addToList = () => {
     if (inputValue.length == 0) {
