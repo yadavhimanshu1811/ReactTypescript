@@ -43,12 +43,12 @@ function InstagramDetails() {
       {loading ? (
         <div className="bg-dark" style={{ height: "90%", width: "90%" }}>Loading</div>
       ) : (
-        <div className="bg-light" style={{ height: "90%", width: "90%" }}>
+        <div className="bg-light border rounded p-1" style={{ height: "90%", width: "90%" }}>
           <h1>{`Followers: ${users.length}`}</h1>
-          <Button text="Refresh" onButtonClick={fetchUsers}/>
-          <ul className="list-group overflow-scroll" style={{ height: "90%" }}>
-            {users.map((user) => (
-              <Tile fullName={user.name} userName={user.username} />
+          <Button text="Refresh" onButtonClick={fetchUsers} className="btn btn-primary"/>
+          <ul className="list-group overflow-scroll" style={{ height: "80%" }}>
+            {users.map((user, index) => (
+              <Tile fullName={user.name} userName={user.username} key={index} />
             ))}
           </ul>
         </div>

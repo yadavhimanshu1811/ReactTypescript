@@ -33,7 +33,7 @@ function TodoList() {
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center bg-dark m-1"
+      className="d-flex justify-content-center align-items-center bg-dark"
       style={{ height: "100vh", width: "30%" }}
     >
       <div

@@ -1,7 +1,7 @@
 interface Props {
   text: string,
   className?: string
-  onButtonClick: ()=> void
+  onButtonClick?: ()=> void
 }
 
 function Button({text = "test", onButtonClick, className} : Props){
