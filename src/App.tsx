@@ -16,12 +16,12 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path:"/todolist",
-      element: <><Navbar/><TodoList/></>
-    },
-    {
       path:"/login",
       element: <><Navbar/><Login/></>
+    },
+    {
+      path:"/todolist",
+      element: <><Navbar/><TodoList/></>
     },
     {
       path:"/instagramDetails",
