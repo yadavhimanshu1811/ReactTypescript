@@ -18,6 +18,9 @@ const Navbar = () => {
             <NavLink className={(e)=>  e.isActive ? "btn btn-danger": ""} to="/runningDetails">Running Details</NavLink>
           </div>
           <div className="mx-2">
+            <NavLink className={(e)=>  e.isActive ? "btn btn-danger": ""} to="/stravaInsights">StravaInsights</NavLink>
+          </div>
+          <div className="mx-2">
             <NavLink className={(e)=>  e.isActive ? "btn btn-danger": ""} to="/logout">Logout</NavLink>
           </div>
       </nav>

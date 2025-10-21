@@ -4,6 +4,7 @@ import InstagramDetails from "./Projects/InstagramDetails/InstagramDetails";
 import RunningDetails from "./Projects/RunningDetails/RunningDetails";
 import Navbar from "./Components/Navbar";
 import Login from "./Components/Login";
+import StravaInsights from "./Projects/Strava Insights/StravaInsights";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
     {
       path:"/runningDetails",
       element: <><Navbar/><RunningDetails/></>
+    },
+    {
+      path:"/stravaInsights",
+      element: <><Navbar/><StravaInsights/></>
     },
   ])
 
