@@ -14,12 +14,32 @@ const StravaInsights = () => {
     <div className="container-div">
       <h2>Himanshu's Running Details:</h2>
       <div className="tile">
-        <div className="date_type_div">
-          Fri, 24/10/2015
+        {/* <div className="heading_tile">Fri, 24/10/2015</div> */}
+        <div className="heading_tile">
+          <div>
+            <p>Friday</p>
+            <p>24/10/2025</p>
+          </div>
         </div>
-        <div className="tile_item">{`Dist (km)`}</div>
-        <div className="tile_item">Time</div>
-        <div className="tile_item">Avg Pace</div>
+        <div className="heading_tile">
+          <div>
+            <p>Dist</p>
+            <p className="units">{` (km)`}</p>
+          </div>
+        </div>
+        {/* <div className="heading_tile">Time</div> */}
+        <div className="heading_tile">
+          <div>
+            <p>Time</p>
+            <p className="units">min:sec</p>
+          </div>
+        </div>
+        <div className="heading_tile">
+          <div>
+            <p>Avg Pace</p>
+            <p className="units">{`(min/km)`}</p>
+          </div>
+        </div>
       </div>
       <div className="tiles_div">
         {runningData.map((it) => (

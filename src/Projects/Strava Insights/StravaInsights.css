@@ -1,5 +1,5 @@
 .container-div {
-    width: 35%;
+    width: 51%;
     margin: 0 3px;
 }
 
@@ -13,23 +13,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 10px;
+    padding: 9px 5px;
     margin: 1px 0;
 }
 
 .tile_item{
     display: flex;
     justify-content: center;
-    width: 25%;
+    width: 150px;
     /* border: 1px solid red; */
 }
 
+.heading_tile{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid green; */
+    height: 45px;
+    font-weight: 600;
+}
+
+.heading_tile p{
+    margin: 0;
+}
+
+.units{
+    font-size:x-small;
+    color: #bfbfbf;
+}
+
 .date_type_div{
-    width: 40%;
+    width: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .date_type_div img{
