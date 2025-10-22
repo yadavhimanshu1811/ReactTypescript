@@ -1,4 +1,15 @@
-const Tile = (props) => {
+interface Props {
+  tileData: {
+    name: string, 
+    distance: string, 
+    moving_time: string, 
+    moving_time_raw: number, 
+    distance_raw: number, 
+    start_time: string
+  };
+}
+
+const Tile = (props: Props) => {
   const { tileData } = props;
   const { name, distance, moving_time, moving_time_raw, distance_raw, start_time } =
     tileData;
@@ -32,8 +43,8 @@ const Tile = (props) => {
     <div className="tile">
       <div className="date_type_div">
         <img src="src/assets/run_image.png" width="35px" height="35px" />
-        {/* <div>{name}</div> */}
-        <div>{convertStartTime()}</div>
+        <div>{name}</div>
+        {/* <div>{convertStartTime()}</div> */}
       </div>
       <div className="tile_item">{distance}</div>
       <div className="tile_item">{moving_time}</div>

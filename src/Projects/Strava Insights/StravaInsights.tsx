@@ -17,8 +17,8 @@ const StravaInsights = () => {
         {/* <div className="heading_tile">Fri, 24/10/2015</div> */}
         <div className="heading_tile">
           <div>
-            <p>Friday</p>
             <p>24/10/2025</p>
+            <p className="units">Friday</p>
           </div>
         </div>
         <div className="heading_tile">
@@ -43,7 +43,16 @@ const StravaInsights = () => {
       </div>
       <div className="tiles_div">
         {runningData.map((it) => (
-          <Tile tileData={it} />
+          <Tile
+            tileData={{
+              name: it.name,
+              distance: it.distance,
+              moving_time: it.moving_time,
+              moving_time_raw: it.moving_time_raw,
+              distance_raw: it.distance_raw,
+              start_time: it.start_time,
+            }}
+          />
         ))}
       </div>
     </div>
