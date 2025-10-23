@@ -13,7 +13,8 @@ function InstagramDetails() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
-  const [dataCompleteBoolean, SetDataCompleteBoolean] = useState(false);
+  const [searchInput, setsearchInput] = useState("");
+  const [searchUser, setsearchUser] = useState<User | undefined>();
 
   const fetchUsers = async () => {
       try {
@@ -35,6 +36,11 @@ function InstagramDetails() {
   // This only happens in the development environment and not in production when you deploy the application.
   // remove <React.StrictMode> from main.tsx
 
+  const searchUserFunction = () => {
+    const findUser = 4;
+    setsearchUser(users.find((user)=> user.name == searchInput ));
+  }
+
   return (
     <div
       className="d-flex bg-dark justify-content-center align-items-center"
@@ -44,6 +50,10 @@ function InstagramDetails() {
         <div className="bg-dark" style={{ height: "90%", width: "90%" }}>Loading</div>
       ) : (
         <div className="bg-light border rounded p-1" style={{ height: "90%", width: "90%" }}>
+          <input value={searchInput} onChange={e=>setsearchInput(e.target.value)}/>
+          <Button text="Search" onButtonClick={searchUserFunction} className="btn btn-secondary"/>
+          <p>{searchUser ? searchUser.name : "No user found"}</p>
+
           <h1>{`Followers: ${users.length}`}</h1>
           <Button text="Refresh" onButtonClick={fetchUsers} className="btn btn-primary"/>
           <ul className="list-group overflow-scroll" style={{ height: "80%" }}>
