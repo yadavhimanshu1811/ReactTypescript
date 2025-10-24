@@ -5,6 +5,7 @@ import RunningDetails from "./Projects/RunningDetails/RunningDetails";
 import Navbar from "./Components/Navbar";
 import Login from "./Components/Login";
 import StravaInsights from "./Projects/Strava Insights/StravaInsights";
+import WeatherApp from "./Projects/WeatherAppClassBased/WeatherApp";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
@@ -17,30 +18,64 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path:"/login",
-      element: <><Navbar/><Login/></>
+      path: "/login",
+      element: (
+        <>
+          <Navbar />
+          <Login />
+        </>
+      ),
     },
     {
-      path:"/todolist",
-      element: <><Navbar/><TodoList/></>
+      path: "/todolist",
+      element: (
+        <>
+          <Navbar />
+          <TodoList />
+        </>
+      ),
     },
     {
-      path:"/instagramDetails",
-      element: <><Navbar/><InstagramDetails/></>
+      path: "/instagramDetails",
+      element: (
+        <>
+          <Navbar />
+          <InstagramDetails />
+        </>
+      ),
     },
     {
-      path:"/runningDetails",
-      element: <><Navbar/><RunningDetails/></>
+      path: "/runningDetails",
+      element: (
+        <>
+          <Navbar />
+          <RunningDetails />
+        </>
+      ),
     },
     {
-      path:"/stravaInsights",
-      element: <><Navbar/><StravaInsights/></>
+      path: "/stravaInsights",
+      element: (
+        <>
+          <Navbar />
+          <StravaInsights />
+        </>
+      ),
     },
-  ])
+    {
+      path: "/WeatherApp",
+      element: (
+        <>
+          <Navbar />
+          <WeatherApp welcomeMsg="Welcome to the Weather app !!" />
+        </>
+      ),
+    },
+  ]);
 
   return (
-    <div >
-      <RouterProvider router={router}/>
+    <div>
+      <RouterProvider router={router} />
     </div>
   );
 }
