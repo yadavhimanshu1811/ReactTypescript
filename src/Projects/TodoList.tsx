@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Button from "../Components/Button";
 import Alert from "../Components/Alert";
 
@@ -7,6 +7,11 @@ function TodoList() {
   const [inputValue, setInputValue] = useState("");
   const [taskDoneIndexes, setTaskDoneIndexes] = useState<number[]>([]);
   const [showAlert, setShowAlert] = useState(false);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    inputRef && inputRef.current && inputRef.current.focus();
+  }, []);
 
   const addToList = () => {
     if (inputValue.length == 0) {
@@ -40,11 +45,16 @@ function TodoList() {
         className="p-1 bg-light border rounded"
         style={{ height: "90%", width: "90%" }}
       >
-        {showAlert ? <Alert closeAlert={()=>{
-          setShowAlert(false);
-        }}>
-          Hello <span>{"Himanshu"}</span>, Please write something before adding to the list !
-        </Alert>: null}
+        {showAlert ? (
+          <Alert
+            closeAlert={() => {
+              setShowAlert(false);
+            }}
+          >
+            Hello <span>{"Himanshu"}</span>, Please write something before
+            adding to the list !
+          </Alert>
+        ) : null}
         <h1>TODO List</h1>
         <div className="input-group mb-3">
           <input
@@ -53,6 +63,7 @@ function TodoList() {
             placeholder="Enter a new task..."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            ref={inputRef}
           />
           <Button
             className="btn btn-primary"
