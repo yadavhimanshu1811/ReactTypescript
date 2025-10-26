@@ -11,7 +11,10 @@ interface SearchRepositoriesError{
     type: Actiontype.SEARCH_REPOSITORIES_ERROR;
     payload: string
 }
-export type Action = SearchRepositoriesAction | SearchRepositoriesSuccess | SearchRepositoriesError;
+interface ResetRepositories{
+    type: Actiontype.RESET_REPOSITORIES;
+}
+export type Action = SearchRepositoriesAction | SearchRepositoriesSuccess | SearchRepositoriesError | ResetRepositories;
 
 
 

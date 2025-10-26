@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import 'bootstrap/dist/css/bootstrap.css'
-import { store } from "../src/state"
+import { store } from "../src/state" //for NPMpackageSearch app
+// import { store } from './redux/store' //for counter app
 import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

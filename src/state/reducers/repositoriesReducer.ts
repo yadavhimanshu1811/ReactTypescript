@@ -29,6 +29,9 @@ switch(action.type){
     case Actiontype.SEARCH_REPOSITORIES_ERROR:
         return {loading: false, error: action.payload, data: []}
 
+    case Actiontype.RESET_REPOSITORIES:
+        return {loading: false, error: null, data: []}
+
     default:
         return state;
 }
