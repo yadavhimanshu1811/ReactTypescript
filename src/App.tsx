@@ -9,20 +9,11 @@ import WeatherApp from "./Projects/WeatherAppClassBased/WeatherApp";
 import NPMpackageSearch from "./Projects/NPMpackageSearch/NPMpackageSearch";
 import CounterRedux from "./Projects/CounterRedux/CounterRedux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import Button from "./Components/Button";
-import { increment, decrement, reset, incrementByAmount } from "./redux/counter/counterSlice";
+import { Provider } from "react-redux";
+import { store as NPMrepositoryStore } from "../src/state";
+import { store as CounterReduxStore } from "./redux/store";
 
 function App() {
-  let cities = ["Delhi", "Mumbai", "Jaipur", "kanpur", "Goa"];
-  let countries = ["India", "Nepal", "China", "Russia", "America"];
-  
-  const dispatch = useDispatch();
-
-  const handleSelectItem = (item: string) => {
-    console.log("App", item);
-  };
-
   const router = createBrowserRouter([
     {
       path: "/login",
@@ -83,7 +74,9 @@ function App() {
       element: (
         <>
           <Navbar />
+          <Provider store={CounterReduxStore}>
           <CounterRedux />
+          </Provider>
         </>
       ),
     },
@@ -92,7 +85,9 @@ function App() {
       element: (
         <>
           <Navbar />
-          <NPMpackageSearch />
+          <Provider store={NPMrepositoryStore}>
+            <NPMpackageSearch />
+          </Provider>
         </>
       ),
     },
