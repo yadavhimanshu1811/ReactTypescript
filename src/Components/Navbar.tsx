@@ -56,6 +56,22 @@ const Navbar = () => {
         <div className="mx-2">
           <NavLink
             className={(e) => (e.isActive ? "btn btn-danger" : "")}
+            to="/NPMpackageSearch"
+          >
+            NPMpackageSearch
+          </NavLink>
+        </div>
+        <div className="mx-2">
+          <NavLink
+            className={(e) => (e.isActive ? "btn btn-danger" : "")}
+            to="/counterRedux"
+          >
+            Counter Using Redux
+          </NavLink>
+        </div>
+        <div className="mx-2">
+          <NavLink
+            className={(e) => (e.isActive ? "btn btn-danger" : "")}
             to="/logout"
           >
             Logout
