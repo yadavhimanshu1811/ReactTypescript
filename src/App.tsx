@@ -17,7 +17,7 @@ function App() {
   //git check
   const router = createBrowserRouter([
     {
-      path: "/login",
+      path: "",
       element: (
         <>
           <Navbar />
